@@ -25,7 +25,6 @@
 package br.com.hiltonws.labscalatests
 
 
-import org.scalatest.exceptions.TestFailedException
 import org.scalatest.{FreeSpec, Matchers}
 
 /**
