@@ -25,6 +25,7 @@
 package br.com.hiltonws.labscalatests
 
 
+import org.scalatest.exceptions.TestFailedException
 import org.scalatest.{FreeSpec, Matchers}
 
 /**
@@ -40,8 +41,9 @@ class TestCalcularIMC extends FreeSpec with Matchers {
     * @param maximo valor máximo
     * @param resultado o valor que deve ser comparado com o calculoIMC
     */
+
   def contadorCalculoIMC(minimo: Double, maximo: Double, resultado: String) {
-    var count = maximo
+    var count = minimo
 
     while (count !==  maximo) {
       CalcularIMC.classificar(count) shouldBe resultado
@@ -120,7 +122,7 @@ class TestCalcularIMC extends FreeSpec with Matchers {
     "Dado o IMC maior que 40 kg/m² " - {
       "Então deve classificar como Obesidade Grau III" in {
 
-        contadorCalculoIMC(40.0, 50.0, "Obesidade Grau II")
+        contadorCalculoIMC(40.0, 50.0, "Obesidade Grau III")
       }
 
     }

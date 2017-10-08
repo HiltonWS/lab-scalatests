@@ -48,7 +48,7 @@ public class CalcularIMC {
      */
     public static double calcularIMC(double peso, double altura) {
         double resultado = peso / Math.pow(altura, 2);
-        BigDecimal bigDecimal = new BigDecimal(resultado);
+        BigDecimal bigDecimal = BigDecimal.valueOf(resultado);
         bigDecimal = bigDecimal.setScale(1, RoundingMode.HALF_UP);
         return bigDecimal.doubleValue();
     }
